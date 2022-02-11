@@ -49,6 +49,10 @@ async function makeTheCall() {
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
-    makeTheCall();
+    if (isNaN(parseInt($("#amount").val()))) {
+      $('.output').text(`Please Enter a Number`);
+    } else {
+      makeTheCall();
+    }
   });
 });
