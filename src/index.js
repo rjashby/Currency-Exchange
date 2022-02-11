@@ -5,8 +5,35 @@ import './css/styles.css';
 import CurrencyService from './currency';
 
 function getMoney(response) {
+  let amount = parseInt($("#amount").val());
+  let foreign = $("select option:selected").val();
+  let country = $("select option:selected").text();
   if (response.conversion_rates) {
-   
+    if (foreign === "AZN") {
+      let converted = `${response.conversion_rates.AZN}`;
+      let final = amount * converted;
+      $('.output').text(`Your ${amount} US Dollars are worth ${final} ${country}`);
+    } else if (foreign === "CDF") {
+      let converted = `${response.conversion_rates.CDF}`;
+      let final = amount * converted;
+      $('.output').text(`Your ${amount} US Dollars are worth ${final} ${country}`);
+    } else if (foreign === "FJD") {
+      let converted = `${response.conversion_rates.FJD}`;
+      let final = amount * converted;
+      $('.output').text(`Your ${amount} US Dollars are worth ${final} ${country}`);
+    } else if (foreign === "HRK") {
+      let converted = `${response.conversion_rates.HRK}`;
+      let final = amount * converted;
+      $('.output').text(`Your ${amount} US Dollars are worth ${final} ${country}`);
+    } else if (foreign === "MVR") {
+      let converted = `${response.conversion_rates.MVR}`;
+      let final = amount * converted;
+      $('.output').text(`Your ${amount} US Dollars are worth ${final} ${country}`);
+    } else if (foreign === "TRY") {
+      let converted = `${response.conversion_rates.TRY}`;
+      let final = amount * converted;
+      $('.output').text(`Your ${amount} US Dollars are worth ${final} ${country}`);
+    }
   } else {
     $('.showErrors').text(`There was an error: ${response.result}`);
   }
@@ -14,16 +41,12 @@ function getMoney(response) {
 
 async function makeTheCall() {
   const response = await CurrencyService.getExchange();
-  getElements(response);
+  getMoney(response);
 }
 
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
-    let amount = parseInt($("#amount").val());
-    console.log(amount);
-    console.log(typeof amount);
-    let foreign = $("select option:selected").val();
-    console.log(foreign);
+    makeTheCall();
   });
 });
