@@ -13,32 +13,32 @@ function getMoney(response) {
     if (foreign === "AZN") {
       let converted = `${response.conversion_rates.AZN}`;
       let final = (amount * converted).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      $('.output').text(`Your 💲${outputAmount} US Dollars are worth 💵 💴 ${final} ${country} 💶 💷`);
+      $('.results').text(`Your 💲${outputAmount} US Dollars are worth 💵 💴 ${final} ${country} 💶 💷`);
     } else if (foreign === "CDF") {
       let converted = `${response.conversion_rates.CDF}`;
       let final = (amount * converted).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      $('.output').text(`Your 💲${outputAmount} US Dollars are worth 💵 💴 ${final} ${country} 💶 💷`);
+      $('.results').text(`Your 💲${outputAmount} US Dollars are worth 💵 💴 ${final} ${country} 💶 💷`);
     } else if (foreign === "FJD") {
       let converted = `${response.conversion_rates.FJD}`;
       let final = (amount * converted).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      $('.output').text(`Your 💲${outputAmount} US Dollars are worth 💵 💴 ${final} ${country} 💶 💷`);
+      $('.results').text(`Your 💲${outputAmount} US Dollars are worth 💵 💴 ${final} ${country} 💶 💷`);
     } else if (foreign === "HRK") {
       let converted = `${response.conversion_rates.HRK}`;
       let final = (amount * converted).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      $('.output').text(`Your 💲${outputAmount} US Dollars are worth 💵 💴 ${final} ${country} 💶 💷`);
+      $('.results').text(`Your 💲${outputAmount} US Dollars are worth 💵 💴 ${final} ${country} 💶 💷`);
     } else if (foreign === "MVR") {
       let converted = `${response.conversion_rates.MVR}`;
       let final = (amount * converted).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      $('.output').text(`Your 💲${outputAmount} US Dollars are worth 💵 💴 ${final} ${country} 💶 💷`);
+      $('.results').text(`Your 💲${outputAmount} US Dollars are worth 💵 💴 ${final} ${country} 💶 💷`);
     } else if (foreign === "TRY") {
       let converted = `${response.conversion_rates.TRY}`;
       let final = (amount * converted).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      $('.output').text(`Your 💲${outputAmount} US Dollars are worth 💵 💴 ${final} ${country} 💶 💷`);
+      $('.results').text(`Your 💲${outputAmount} US Dollars are worth 💵 💴 ${final} ${country} 💶 💷`);
     } else {
-      $('.output').text(`There was an error processing your request: 🤷🏼‍♂️ Currency Not Found 🤷🏾‍♀️`);
+      $('.results').text(`There was an error processing your request: 🤷🏼‍♂️ Currency Not Found 🤷🏾‍♀️`);
     }
   } else {
-    $('.output').text(`There was an error processing your request: ${response}`);
+    $('.results').text(`There was an error processing your request: ${response["error-type"]}`);
   }
 }
 

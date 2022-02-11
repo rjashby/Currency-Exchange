@@ -3,7 +3,7 @@ export default class CurrencyService {
     try {
       const response = await fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`);
       if (!response.ok) {
-        throw Error(response.error.result);
+        throw Error(response["error-type"]);
       }
       return response.json(); 
     } catch(error) {
