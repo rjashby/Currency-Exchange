@@ -8,7 +8,7 @@ function getMoney(response) {
   let amount = parseInt($("#amount").val()).toFixed(2);
   let foreign = $("select option:selected").val();
   let country = $("select option:selected").text();
-  if (response.conversion_rates) {
+  if (response.result === "success") {
     if (foreign === "AZN") {
       let converted = `${response.conversion_rates.AZN}`;
       let final = (amount * converted).toFixed(2);
@@ -33,9 +33,11 @@ function getMoney(response) {
       let converted = `${response.conversion_rates.TRY}`;
       let final = (amount * converted).toFixed(2);
       $('.output').text(`Your ${amount} US Dollars are worth ${final} ${country}`);
+    } else {
+      $('.output').text(`There was an error processing your request: Currency Not Found`);
     }
   } else {
-    $('.showErrors').text(`There was an error processing your request: ${response.result}`);
+    $('.output').text(`There was an error processing your request: ${response}`);
   }
 }
 
