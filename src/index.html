@@ -10,7 +10,7 @@
     <h1>Exchange Your Currency</h1>
     <form>
       <p>Enter an amount in $USD</p>
-      <input type="text" class="text" required>
+      <input type="text" id="amount" required>
       <label>Choose a Currency:</label>
       <select name="money">
         <option value="">Select a Currency:</option>
@@ -23,6 +23,7 @@
       </select>
       <button id="exchange">Submit</button>
     </form>
+    <div class="showErrors"></div>
   </div>
 </body>
 </html>

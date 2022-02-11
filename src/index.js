@@ -8,18 +8,22 @@ function getMoney(response) {
   if (response.conversion_rates) {
    
   } else {
-    $('.showErrors').text(`There was an error: ${response.error-type}`);
+    $('.showErrors').text(`There was an error: ${response.result}`);
   }
 }
 
-async function callEmUp(city) {
+async function makeTheCall() {
   const response = await CurrencyService.getExchange();
   getElements(response);
 }
 
 $(document).ready(function() {
-  $('#button').click(function() {
-    let myVar = 
-    callEmUp();
+  $("form").submit(function(event) {
+    event.preventDefault();
+    let amount = parseInt($("#amount").val());
+    console.log(amount);
+    console.log(typeof amount);
+    let foreign = $("select option:selected").val();
+    console.log(foreign);
   });
 });
