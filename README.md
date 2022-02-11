@@ -1,9 +1,9 @@
 
-# _PROJECT NAME_ 
+# _Currency Exchange Application_ 
 
 #### By _**Ryan Ashby**_ 
 
-#### _SHORT DESCRIPTION_
+#### _This application allows a user to input an amount of money in US Dollars, and returns the exchange rate for that amount based on a drop down menu of sample foreign countries using API calls to get the current exchange rate._
 
 ### _Link to GitHub Repository_
 
@@ -25,21 +25,29 @@
 
 ## Description 
 
-_This application..._
+_This modest currency exchange application allows a user to see what the exchange rate is between US Dollars, and 6 sample counties._
+
+_The user is provided with an input field to enter a starting amount of money, and is asked to select a country from the dropdown menu._
+
+_Once selected, the user can submit their input via a submit button, and the application makes an API call to a currency exchange API. The user will then either be given the appropriate conversion rate, or will be given an error if either the API call or the user input was incorrect and/or failed._
 
 ## Setup/Installation Requirements 
 
 **Cloning**
 
 1) _In order to utilize this page on your local machine, you will need to clone a copy of this repository using the "$ git clone {url}" command in your coding terminal._
-2) _Navigate to your desired directory in your command terminal and run "$ git clone LINK"_
+
+2) _Navigate to your desired directory in your command terminal and run "$ git clone https://github.com/rjashby/Currency-Exchange"_
+
 3) _Should you wish to edit the code you cloned, you will need coding software. VS Code is an example of a free code editor, which can be downloaded at https://code.visualstudio.com/_.
+
 4) _Once your coding software is installed, open the folder of the cloned repository, which will contain the HTML files, the bootstrap.css framework, any images, audio, as well separate individual stylesheets for each HTML file._
+
 5) _To view the finished site locally, simply navigate to the folder/directory which you cloned the project, and open the index.html file in your browser._
 
 **Downloading**
 
-1) _In your browser, navigate to LINK, and click the green "Code" button, which will provide a drop down menu. Click on "Download ZIP" at the bottom of the menu, and save it to your desired location._
+1) _In your browser, navigate to https://github.com/rjashby/Currency-Exchange, and click the green "Code" button, which will provide a drop down menu. Click on "Download ZIP" at the bottom of the menu, and save it to your desired location._
 
 2) _Once downloaded, unzip and extract the files._
 
@@ -52,11 +60,13 @@ _This application..._
 
 2) _Continue to their sign-up page at https://app.exchangerate-api.com/sign-up. You can choose a plan that works for you, but they have a free plan that allows up to 1,500 API calls a month_
 
-3) _Add an PRIVATE .env file to your top most directory._
+3) _At this point, you'll be able to access a dashboard that includes your API key as well as your remaining API calls for the month._
 
-4) _Save the API key provided after sign-up by typing the following in your .env following:_ API_KEY=INSERT YOUR API KEY HERE
+4) _Add an PRIVATE .env file to your top most directory._
 
-5) _Ensure that you have added .env to your .gitignore file BEFORE PROCEEDING_
+5) _Ensure that you have added .env to your .gitignore file BEFORE PROCEEDING. If you intend to store your work in a repository on GitHub, push your .gitignore file before storing your API Key_
+
+6) _Save the API key provided by the exchange rate API after sign-up by typing the following in your .env file at the top:_ API_KEY=INSERT-YOUR-API-KEY
 
 **Build the Environment and Run the Project** 
 
@@ -66,16 +76,7 @@ _This application..._
 
 3) _Once built, you can open dist/index.html in your browser._
 
-4) _To run a server view of the project, you can type the command "npm start" to witness and inspect any changes you wish to make in real time._
-
-## Tests/Specs
-
-#### Describe: 
-
-*Test:* "It should..."
-*Code:* ;
-*Input:*
-*Expected Output:* 
+4) _To run a live server view of the project, you can type the command "npm start" to witness and inspect any changes you wish to make in real time._
 
 ## Known Bugs 
 
