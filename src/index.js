@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyService from './currency';
 
+
 function getMoney(response) {
   let amount = parseFloat($("#amount").val()).toFixed(2);
   let outputAmount = parseFloat($("#amount").val()).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
